@@ -4,10 +4,57 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite</title>
+    <link rel="stylesheet" href="./src/style.css">
+    <title>wheather</title>
   </head>
   <body>
-    <div id="app"></div>
+    <header class="header">
+      <div class="container header__inner">
+              <nav class="menu">
+                  <ul class="menu__list">
+                      <li class="menu__item"><a class="menu__linck" href="#">Город</a></li>
+                      <li class="menu__item"><a class="menu__linck" href="#">Главная</a></li>
+                      <li class="menu__item"><a class="menu__linck" href="#">Авторы</a></li>
+                      <li class="menu__item"><a class="menu__linck" href="#">Поддержка</a></li>
+                      <button class="menu__item-btn"><img class="menu__btn" src="./src/img/icons/moon_black.png" alt=""></button>
+                  </ul>
+              </nav>
+      </div>
+  </header>
+
+  <section class="time">
+    <div class="time__inner">
+      <div class="time__content">
+        <div class="time__degrees">
+          <div class="time__temperature">
+            <div class="time__tempValue">13°C</div>
+            <img class="time__cloud" src="./src/img/icons/cloud_black.png" alt="">
+          </div>    
+        </div>
+
+        <div id="time"></div>
+        <div class="time__minsk">
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    function updateTime() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const currentTime = `${hours}:${minutes}:${seconds}`;
+        document.getElementById('time').textContent = currentTime;
+    }
+    updateTime();
+    setInterval(updateTime, 1000);
+</script>
+
+
+
+
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
