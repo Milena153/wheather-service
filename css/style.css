@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 160px;
+}
+
+
+
+
+
+.main__count{
+    width: 1600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 160px;
+}
+
+.feature{
+    background-color: rgb(0, 0, 0);
+    width: 486px;
+    height: 222px;
+    border-radius: 10px;
+}
+
+
+
+.help__box{
+    background-color: #d8d8d8;
+    width: 1920px;
+    height: 50px;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 260px;
+}
+
+
+
+
+
+
+
+
+.city{
+    width: 530px;
+    height: 242px;
+    border-radius: 10px;
+    background-color: #7e7e7e;
+    display: flex;
+    margin-left: 535px;
+    margin-top: 10px;
+}
