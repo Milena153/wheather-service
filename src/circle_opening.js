@@ -1,7 +1,8 @@
-let audio_but = document.querySelector(".audio");
-let cover_div = audio_but.firstElementChild;
-let title_music = cover_div.firstElementChild;
-let music_list = cover_div.lastElementChild;
+const audio_but = document.querySelector(".audio");
+const cover_div = audio_but.firstElementChild;
+const title_music = cover_div.firstElementChild;
+const music_list = cover_div.lastElementChild;
+const icon = cover_div.querySelector(".visible_icon");
 
 
 let buttons = document.querySelectorAll(".hidden_but");
@@ -13,9 +14,9 @@ audio_but.addEventListener("click", (event) => {
 
     if (!event.target.classList.contains("hidden-button")) {
         audio_but.classList.toggle("open");
-        title_music.textContent = "music list";
         title_music.classList.toggle("open_title");
         music_list.classList.toggle("visible");
+        icon.classList.toggle("hidden_icon");
         
 
         if (audio_but.classList.contains("open")) {
@@ -34,7 +35,6 @@ audio_but.addEventListener("click", (event) => {
 buttons.forEach(button => {
     button.addEventListener('click', (event) => {
       event.stopPropagation();
-      console.log("Кнопка нажата!");
     });
   });
 
