@@ -3,18 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-.audio{
-  height: 100px;
-  width: 100px;
-  background-color: black;
-  border-radius: 5%;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  transition: 1s all;
-}
-
+/* 
 .audio.open{
   height: 600px;
   width: 300px;
@@ -99,4 +88,4 @@
     opacity: 1;
   }
 }
-
+ */
