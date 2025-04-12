@@ -9,10 +9,6 @@
     padding-left: 160px;
 }
 
-
-
-
-
 .main__count{
     width: 1600px;
     display: flex;
@@ -28,8 +24,6 @@
     border-radius: 10px;
 }
 
-
-
 .help__box{
     background-color: #d8d8d8;
     width: 1920px;
@@ -40,13 +34,6 @@
     align-items: center;
     margin-top: 260px;
 }
-
-
-
-
-
-
-
 
 .city{
     width: 530px;
