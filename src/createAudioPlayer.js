@@ -1,5 +1,7 @@
 import { firstSong } from "./data"
 
+import { firstSong } from "./data"
+
 export function createAudioPlayer() {
     const audioContainer = document.querySelector('.audioContainer') 
     audioContainer.innerHTML = `
