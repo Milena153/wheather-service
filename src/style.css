@@ -25,28 +25,71 @@
   border: 3px solid black;
   background-color: rgb(255, 255, 255);
 }
+
+/* стили кастомного аудиоплеера */
+.custom-audio{
+  display: flex;
+  flex-direction: column;
+}
+.buttonWrapper{
+  text-align: center;
+}
+
+.before{
+  background: #000;
+  border: none;
+}
+
+.after{
+  background: #000;
+  border: none;
+}
 .play-btn{
   background: #000;
   border: 0;
 }
 .playIcon path{ /* иконка проигрывателя */
   fill: white;
-}
-.musicIcon{ /* иконка */
-  height: 128px;
-  width: 128px;
+  cursor: pointer;
 }
 
-.beforeIcon path{
+.backButton path{/* иконка перехода на прошлую песню */
   fill: white;
+  cursor: pointer;
 }
 
-.backButton path{
+.backButton path{/* иконка перехода на прошлую песню */
   fill: white;
+  cursor: pointer;
+}
+.afterIcon path{/* иконка перехода на следующую песню */
+  fill: white;
+  cursor: pointer;
 }
 .music_button:hover svg path{
   fill: #000000;
 }
+
+.progressCont{
+  width: 100%;
+  border-radius: 5px;
+  background-color: #fff;
+  height: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  margin: 20px 0;
+}
+
+.progressBar{
+  background-color: #000;
+  border-radius: 5px;
+  height: 6px;
+  width: 50%;
+}
+/* стили кастомного аудиоплеера закончились?*/
 
 .audio_module{ /*окно, открывающееся при нажатии кнопки */
   width: 400px;
@@ -64,40 +107,6 @@
   overflow: hidden;
 }
 
-#audioPlayer{
-  position: relative;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.custom-audio{
-  color: white;
-}
-.before{
-  fill: aliceblue;
-}
-/* #audioPlayer::after{
-  position: absolute;
-  top: 50%;
-  margin-left: 13px;
-  content: ">";
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  color: azure;
-}
-
-#audioPlayer::before{
-  position: absolute;
-  top: 50%;
-  left: -20px;
-  content: "<";
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  color: azure;
-} */
 .module_content .closed{
   overflow: hidden;
 }
@@ -119,8 +128,8 @@
   width: 300px;
   height: 30px;
 }
-
-.closed{
+/* если закрыто */
+.closed{ 
   opacity: 0;
   opacity: 0;
   width: 0;

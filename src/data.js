@@ -14,4 +14,3 @@ export const data = [{
     description: "adfa",
 }]
 
-export const firstSong = data[0];
