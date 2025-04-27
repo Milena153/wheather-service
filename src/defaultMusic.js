@@ -1,9 +1,8 @@
 import { data } from "./data";
-export function loadSong() {
-    let i = 0;
+export function loadSong(song) {
     const audio = document.querySelector(".audio");
-    const songTitle = document.querySelector(".songTitle");   
-    songTitle.innerHTML = data[i].title
-    audio.src = `music/${data[i].src}`
-}
+    const songTitle = document.querySelector(".songTitle");  
 
+    songTitle.innerHTML = song.title;
+    audio.src = song.src;
+}

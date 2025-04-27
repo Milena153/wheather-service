@@ -4,22 +4,27 @@ import {loadSong} from './defaultMusic'
 import {playSong } from './playSong';
 import {pauseSong} from './pauseSongs'
 import { nextSong } from './nextSong';
+import { data } from './data';
 createAudioPlayer();
 
 openAudioModule();
 
-loadSong();
+let songIndex = 2;
+loadSong(data[songIndex]);
+
 let playBtn = document.querySelector(".play-btn");
 
 let music_module = document.querySelector('.audio_module');   
-console.log(music_module);
+let audio = document.querySelector(".audio");
+console.log(audio);
+
 
 function playPause(){
+const isPlaying = music_module.classList.contains("idle");
 playBtn.addEventListener("click", () => {
 
-        if(music_module.classList.contains("idle")){
+        if(isPlaying){
             playSong();
-            music_module.classList.toggle("idle");
             playBtn.innerHTML = `
         <svg style="cursor: pointer" fill="#fff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40px" height="40px" viewBox="0 0 277.338 277.338" xml:space="preserve">
         <g>
@@ -33,7 +38,6 @@ playBtn.addEventListener("click", () => {
         }
         else{
             pauseSong();
-            music_module.classList.toggle("idle");
             playBtn.innerHTML = `<svg class="playIcon" width="40px" height="40px" viewBox="-0.5 0 7 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g id="Page-1" stroke="none" stroke-width="1" fill="ffffff" fill-rule="evenodd">
                 <g id="Dribbble-Light-Preview" transform="translate(-347.000000, -3766.000000)" fill="#000000">
@@ -50,4 +54,4 @@ playBtn.addEventListener("click", () => {
 }
 playPause();
 
-nextSong();
+// nextSong();

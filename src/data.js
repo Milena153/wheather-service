@@ -12,5 +12,5 @@ export const data = [{
     title: "The sound of the weather: rain dripping on dry leaves in the park",
     src: "../public/music/music/deti-online.com_-_bormotanie-rucheyka.mp3",
     description: "adfa",
-}]
-
+}
+]
