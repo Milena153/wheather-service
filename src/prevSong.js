@@ -1,29 +1,14 @@
 import { data } from './data';
 import { playSong } from './playSong';
 import { loadSong } from './loadSong';
-export function nextSong(song){ 
-
-    let nextBtn = document.querySelector(".after");
+export function prevSong(song){
     let songIndex = 0;
-    let audio = document.querySelector(".audio");
-    let songTitle = document.querySelector(".songTitle");
+    let prevBtn = document.querySelector(".before");
     let playBtn = document.querySelector(".play-btn");
 
-    nextBtn.addEventListener("click", () => {
-        const {title, src} = song;
-
-        console.log(song);
-        
-        songIndex += 1;
-        if(songIndex >= data.length){
-            console.log(songIndex);
-            
-            songIndex = 0
-        }
-
-        songTitle.innerHTML = title;
-        audio.src = src;
-
+    prevBtn.addEventListener("click", () => {
+        prevSong(data[songIndex - 1]);
+    
         playBtn.innerHTML = `<svg class="playIcon" width="40px" height="40px" viewBox="-0.5 0 7 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g id="Page-1" stroke="none" stroke-width="1" fill="ffffff" fill-rule="evenodd">
                     <g id="Dribbble-Light-Preview" transform="translate(-347.000000, -3766.000000)" fill="#000000">
@@ -34,10 +19,9 @@ export function nextSong(song){
                     </g>
                 </g>
             </svg>
-    `   
+    `
     });
 
-    console.log(song[songIndex]);
-    
     loadSong(data[songIndex]);
+    playSong();
 }
