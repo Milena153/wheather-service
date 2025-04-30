@@ -4,4 +4,5 @@ export function loadSong(song) {
 
     songTitle.innerHTML = song.title;
     audio.src = song.src;
+    audio.load();
 }
