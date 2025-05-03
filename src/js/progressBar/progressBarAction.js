@@ -1,4 +1,4 @@
-import { progressBarChange } from "./progressBar";
+import { progressBarChange } from "./progressBarChange";
 
 export function progressBarAction(){
     let audio = document.querySelector(".audio");

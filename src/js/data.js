@@ -6,7 +6,7 @@ export const data = [{
 
 {
     title: "Ruchey",
-    src: "public/music/deti-online.com_-_bormotanie-rucheyka.mp3",
+    src: "../public/music/deti-online.com_-_bormotanie-rucheyka.mp3",
     description: "adfa",
 },
 {
