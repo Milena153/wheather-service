@@ -1,8 +1,10 @@
+import { nextSong } from "../musicActions/nextSong";
+
 export function setProgress(event){
     let audio = document.querySelector(".audio");
     const containerWidth = event.currentTarget.clientWidth;
     const clickPositionX = event.offsetX;
-    const percentage = (clickPositionX / containerWidth) * 100;
+    let percentage = (clickPositionX / containerWidth) * 100;
     const duration = audio.duration;
 
     const progressBar = document.querySelector(".progressBar");
@@ -10,5 +12,4 @@ export function setProgress(event){
 
     audio.currentTime = (clickPositionX / containerWidth) * duration
 
-    
 }

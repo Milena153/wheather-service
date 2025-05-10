@@ -1,7 +1,7 @@
 import { nextSong } from "../musicActions/nextSong";
 
 export function progressBarChange(event){
-    const {duration, currentTime} = event.srcElement;
+    let {duration, currentTime} = event.srcElement;
     let audio = document.querySelector(".audio");
     let progress = document.querySelector(".progressBar")
     
@@ -15,6 +15,7 @@ export function progressBarChange(event){
             nextSong();
             return;
         }
+        
     });
 }
 // только начал работу над прогресс баром
