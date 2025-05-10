@@ -34,6 +34,57 @@
   text-align: center;
 }
 
+.closeBtn{
+  color: white;
+    position: absolute;
+    top: -10px;
+    font-size: xx-large;
+    right: 0px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+
+.volumeInp{
+  width: 100%;
+  accent-color: #000000;
+}
+
+.volumeInp::-webkit-slider-runnable-track{
+  box-sizing: border-box;
+  height: 15px;
+  background-color: #2b2a33;
+  border-radius: 10px;
+}
+
+.volumeInp::-webkit-slider-thumb{
+  width: 100px;
+  height: 100px;
+  margin-top: 0;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px inset #ffffff;
+  transition: 300ms;
+}
+
+.volumeInp:focus-visible {
+  outline-offset: 10px;
+  outline: 1px solid #ffffff;
+}
+
+.volumeInp:hover::-webkit-slider-thumb,
+.volumeInp:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 5px inset #ffffff;
+}
+
+.volumeInp:active::-webkit-slider-thumb {
+  box-shadow: 0 0 0 30px inset #ffffff;
+}
+
+.volumeInp:disabled::-webkit-slider-thumb {
+  box-shadow: 0 0 0 30px inset gray;
+}
+
 .before{
   background: #000;
   border: none;
@@ -111,9 +162,15 @@
 
 .module_content{
   overflow: hidden;
+  position: relative;
 }
 .title{ /*заголовок */
   color: white;
+}
+
+.volumePrecent{
+  color: white;
+  font-weight: 800;
 }
 
 .song_list{ /*список музыки*/

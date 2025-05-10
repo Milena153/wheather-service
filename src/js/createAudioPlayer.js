@@ -1,5 +1,3 @@
-import { data,  } from "./data"
-
 export function createAudioPlayer() {
     const audioContainer = document.querySelector('.audioContainer') 
     audioContainer.innerHTML = `
@@ -13,6 +11,7 @@ export function createAudioPlayer() {
     <div class="audio_module closed idle">
         <div class="module_content closed">
             <h3 class="title">music list</h3>
+            <div class="closeBtn">×</div>
             <p class="songTitle" style="color:white"></p>
                 <div class="progressCont">
                     <div class="progressBar"></div>
@@ -58,7 +57,8 @@ export function createAudioPlayer() {
                             </button>
                         </div>
                     </div>
-            <button class="back_button">back</button>
+                    <p class="volumePrecent">50</p>
+                    <input class="volumeInp" type="range" value="50" max="100" min="0"></input>
         </div>
     </div>
     `

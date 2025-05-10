@@ -1,7 +1,7 @@
 export function openAudioModule() {
     let music_button = document.querySelector('.music_button');
     let music_module = document.querySelector('.audio_module');   
-    let back_button = document.querySelector(".back_button");
+    let back_button = document.querySelector(".closeBtn");
     let module_content = document.querySelector(".module_content");
     
     music_button.addEventListener("click", () => {

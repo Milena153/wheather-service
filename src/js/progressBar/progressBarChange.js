@@ -1,4 +1,5 @@
 import { nextSong } from "../musicActions/nextSong";
+import { playBtnAction } from "../musicActions/playBtnAction";
 
 export function progressBarChange(event){
     let {duration, currentTime} = event.srcElement;
@@ -9,12 +10,11 @@ export function progressBarChange(event){
         const progressPrecent = (( currentTime / duration ) * 100);
     
         progress.style.width = `${progressPrecent}%`
-        console.log(progressPrecent, duration);
     
-        if(currentTime >= duration - 20){
-            nextSong();
-            return;
-        }
+       audio.addEventListener("ended", async() =>{
+           await nextSong();
+            playBtnAction();
+       });
         
     });
 }
