@@ -5,6 +5,5 @@ export function volumeChange(){
 
     audio.volume = volumeInp.value / 100;
     spanValue.innerText = Math.round(audio.volume * 100);
-    console.log(audio.volume * 100);
     
 }
