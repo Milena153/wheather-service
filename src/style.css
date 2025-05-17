@@ -46,8 +46,12 @@
 
 
 .volumeInp{
-  width: 100%;
   accent-color: #000000;
+}
+
+.volumeWrapper{
+  width: 25%;
+
 }
 
 .volumeInp::-webkit-slider-runnable-track{
@@ -84,6 +88,7 @@
 .volumeInp:disabled::-webkit-slider-thumb {
   box-shadow: 0 0 0 30px inset gray;
 }
+
 
 .before{
   background: #000;
@@ -154,6 +159,7 @@
   background: #000;
   transition: 1.5s all;
   overflow: hidden;
+  filter: drop-shadow(2px 4px 6px black)
 }
 
 .module_content .closed{

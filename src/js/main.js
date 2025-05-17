@@ -31,4 +31,4 @@ audio.addEventListener("timeupdate", progressBarAction);
 
 progressContainer.addEventListener("click", setProgress);
 
-volumeInp.addEventListener("click", volumeChange)
+volumeInp.addEventListener("input", volumeChange)

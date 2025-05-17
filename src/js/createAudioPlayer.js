@@ -57,8 +57,10 @@ export function createAudioPlayer() {
                             </button>
                         </div>
                     </div>
-                    <p class="volumePrecent">50</p>
-                    <input class="volumeInp" type="range" value="50" max="100" min="0"></input>
+                    <div class="volumeWrapper">
+                        <p class="volumePrecent">50%</p>
+                        <input class="volumeInp" type="range" value="50" max="100" min="0"></input>
+                    </div>
         </div>
     </div>
     `
