@@ -3,80 +3,265 @@
   padding: 0;
   box-sizing: border-box;
 }
-.audio{
-  height: 100px;
-  width: 100px;
+
+.music_button{ /*кнопка */
   background-color: black;
-  border-radius: 5%;
+  border: 0;
+  display: flex;
+  border-radius: 20%;
+  transition: 0.75s all;
+  height: 128px;
+  width: 128px;
+  align-items: center;
+  transition: 0.75s all;
+  height: 128px;
+  width: 128px;
+  align-items: center;
+}
+
+.music_button:hover{ 
+  padding: 2px;
+  border: 3px solid black;
+  background-color: rgb(255, 255, 255);
+}
+
+/* стили кастомного аудиоплеера */
+.custom-audio{
+  display: flex;
+  flex-direction: column;
+}
+.buttonWrapper{
+  text-align: center;
+}
+
+.closeBtn{
   color: white;
+    position: absolute;
+    top: -10px;
+    font-size: xx-large;
+    right: 0px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+
+.volumeInp{
+  accent-color: #000000;
+}
+
+.volumeWrapper{
+  width: 25%;
+
+}
+
+.volumeInp::-webkit-slider-runnable-track{
+  box-sizing: border-box;
+  height: 15px;
+  background-color: #2b2a33;
+  border-radius: 10px;
+}
+
+.volumeInp::-webkit-slider-thumb{
+  width: 100px;
+  height: 100px;
+  margin-top: 0;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px inset #ffffff;
+  transition: 300ms;
+}
+
+.volumeInp:focus-visible {
+  outline-offset: 10px;
+  outline: 1px solid #ffffff;
+}
+
+.volumeInp:hover::-webkit-slider-thumb,
+.volumeInp:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 5px inset #ffffff;
+}
+
+.volumeInp:active::-webkit-slider-thumb {
+  box-shadow: 0 0 0 30px inset #ffffff;
+}
+
+.volumeInp:disabled::-webkit-slider-thumb {
+  box-shadow: 0 0 0 30px inset gray;
+}
+
+
+.before{
+  background: #000;
+  border: none;
+}
+
+.after{
+  background: #000;
+  border: none;
+}
+.play-btn{
+  background: #000;
+  border: 0;
+}
+.playIcon path{ /* иконка проигрывателя */
+  fill: white;
+  cursor: pointer;
+}
+
+.backButton path{/* иконка перехода на прошлую песню */
+  fill: white;
+  cursor: pointer;
+}
+
+.backButton path{/* иконка перехода на прошлую песню */
+  fill: white;
+  cursor: pointer;
+}
+.afterIcon path{/* иконка перехода на следующую песню */
+  fill: white;
+  cursor: pointer;
+}
+.music_button:hover svg path{
+  fill: #000000;
+}
+
+.progressCont{
+  width: 100%;
+  border-radius: 5px;
+  background-color: #fff;
+  height: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  margin: 20px 0;
+}
+
+.progressBar{
+  background-color: #000;
+  border-radius: 5px;
+  height: 6px;
+  width: 0;
+}
+/* стили кастомного аудиоплеера закончились?*/
+
+.audio_module{ /*окно, открывающееся при нажатии кнопки */
+  width: 400px;
+  height: fit-content;
+  padding: 20px;
+  border:0;
+  border-radius: 2%;
+  border-radius: 2%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  transition: 1s all;
+  justify-content: center;
+  background: #000;
+  transition: 1.5s all;
+  overflow: hidden;
+  filter: drop-shadow(2px 4px 6px black)
 }
 
-.audio.open{
-  height: 600px;
-  width: 300px;
-  align-items: flex-start;
-  font-size: larger;
+.module_content .closed{
+  overflow: hidden;
 }
 
-h3{
-  margin-left: auto;
-  margin-right: auto;
+.module_content{
+  overflow: hidden;
+  position: relative;
 }
-.open_title{
-  margin-top: 15px;
-  text-align: center;
+.title{ /*заголовок */
+  color: white;
 }
 
-.hidden_ul{
-  display: none;
+.volumePrecent{
+  color: white;
+  font-weight: 800;
 }
-.visible{
+
+.song_list{ /*список музыки*/
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
-.visible_but{
-  padding: 10px;
+.song_button{ /*кнопка выбора музыки*/
   width: 300px;
-  border-radius: 0%;
-  border: 1px solid white;
-  background-color: #000000;
-  animation-name: slidein;
-  animation-duration: 1s;
+  height: 30px;
 }
-.hidden_but{
-  animation-name: slideout;
-  animation-duration: 1s;
-}
-.cover{
-  text-align: center;
+/* если закрыто */
+.closed{ 
+  opacity: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-@keyframes slidein {
-  from {
+@keyframes content_disappearance {
+  from{
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to{
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes content_appearance {
+  from{
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes content_disappearance {
+  from{
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to{
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes content_appearance {
+  from{
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes module_appearance {
+  from{
     width: 0px;
-    opacity: 0;
+    height: 0px;
   }
-
-  to {
+  to{
     width: 300px;
-    opacity: 1;
+    height: 600px;
   }
 }
 
-@keyframes slideout {
-  from {
-    width: 100px;
-    opacity: 1;
+@keyframes module_disappearance {
+  0%{
+    width: 300px;
+    height: 600px;
   }
-
-  to {
-    width: 0;
-    opacity: 0;
+  80%{
+    width: 0px;
+    height: 0px;
+  }
+  100%{
+    display: none;
   }
 }
