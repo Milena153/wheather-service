@@ -15,7 +15,6 @@
    
    li.textContent = taskInput.value;
 
-   // Добавление кнопки для удаления
    const deleteButton = document.createElement('button');
    deleteButton.textContent = 'Удалить';
    deleteButton.className = 'delete-button';
@@ -24,12 +23,12 @@
        taskList.removeChild(li);
    });
 
-//Добавление для отметки задачи как выполненной
+
 const doneButton = document.createElement('button');
   doneButton.textContent = 'Готово';
   doneButton.className = 'done-button';
 
-  // Обработчик для "Готово"
+
   doneButton.addEventListener('click', function() {
     li.classList.toggle('done');
     li.classList.toggle('completed');
@@ -43,5 +42,35 @@ const doneButton = document.createElement('button');
    li.appendChild(deleteButton);
    taskList.appendChild(li);
    
-   taskInput.value = ''; // Очистка ввода
+   taskInput.value = ''; 
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  let styleMode = localStorage.getItem('styleMode');
+
+  const activateDarkStyle = () => {
+    document.body.classList.add('dark-mode');
+    localStorage.setItem('styleMode', 'dark');
+  };
+
+  const deactivateDarkStyle = () => {
+    document.body.classList.remove('dark-mode');
+    localStorage.removeItem('styleMode');
+  };
+
+  const styleButton = document.querySelector('.menu__item-btn');
+  if (styleButton) {
+    styleButton.addEventListener('click', () => {
+      styleMode = localStorage.getItem('styleMode');
+      if (styleMode !== 'dark') {
+        activateDarkStyle();
+      } else {
+        deactivateDarkStyle();
+      }
+    });
+  }
+
+  if (styleMode === 'dark') {
+    activateDarkStyle();
+  }
+});

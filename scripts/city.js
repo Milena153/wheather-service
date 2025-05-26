@@ -1,4 +1,3 @@
-
 export const createGeolocation = () => {
     navigator.geolocation.getCurrentPosition(async (position) => {
         try{
@@ -12,33 +11,13 @@ export const createGeolocation = () => {
         });
     
         const data = await response.json();
+        
     
         document.getElementById("city").textContent =`${data.address.city || data.address.town || data.address.village}`;
+
+        return data.address.city;
     } 
     catch(error) {
         document.getElementById("city").textContent = "Не удалось определить ваше местоположение.";
     }});
 };
-
-
-
-export const createBackground = () => {
-
-let apiKey = ''; 
-let city = '';
-let url = '';
-
-
-function changeBackground(weather) {
-if (weather.includes('clear')) {
-    document.body.style.background = '' ;
-} else if (weather.includes('cloud')) {
-    document.body.style.background = '';
-} else if (weather.includes('rain')) {
-    document.body.style.background = '' ;
-} else if (weather.includes('snow')) {
-    document.body.style.background = '' ;
-} else {
-    document.body.style.background =  '';
-}
-}}

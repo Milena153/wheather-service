@@ -1,14 +1,9 @@
-function goToSlide(index) {
-    const slides = document.querySelector('.slides');
-    const slideWidth = 1200; 
-    slides.style.transform = `translateX(-${index * slideWidth}px)`;
-  };
 
-
-
-  document.addEventListener('DOMContentLoaded', () => {
-  let styleMode = localStorage.getItem('styleMode');
+export const pageStyle = () => {
+document.addEventListener('DOMContentLoaded', () => {
   const icon = document.querySelector('#icon');
+  const styleButton = document.querySelector('.menu__item-btn');
+  let styleMode = localStorage.getItem('styleMode');
 
   const activateDarkStyle = () => {
     document.body.classList.add('dark-mode');
@@ -22,7 +17,6 @@ function goToSlide(index) {
     if (icon) icon.src = './src/img/icons/moon_black.png';
   };
 
-  const styleButton = document.querySelector('.menu__item-btn');
   if (styleButton) {
     styleButton.addEventListener('click', () => {
       styleMode = localStorage.getItem('styleMode');
@@ -38,3 +32,4 @@ function goToSlide(index) {
     activateDarkStyle();
   }
 });
+ };
