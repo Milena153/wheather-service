@@ -2,6 +2,55 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css">
+    <title>wheather</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__inner">
+        <nav class="menu">
+            <ul class="menu__list">
+                <li class="menu__item"><a class="menu__linck" href="#">Город</a></li>
+                <li class="menu__item"><a class="menu__linck" href="#">Главная</a></li>
+                <li class="menu__item"><a class="menu__linck" href="./authors.html">Авторы</a></li>
+                <li class="menu__item"><a class="menu__linck" href="#">Поддержка</a></li>
+                <button class="menu__item-btn">
+                  <img id= "icon" class="menu__btn" src="./src/img/icons/moon_black.png" alt="">
+                </button>
+            </ul>
+        </nav>
+      </div>
+  </header>
+
+    <main class="main-container">
+      
+    <section class="time">
+        <div class="time__content">
+          <div class="time__degrees">
+            <div class="time__temperature"></div>    
+          </div>
+          <div id="time"></div>
+        </div>
+    </section>
+    
+    <div class="city-div">
+      <h1 class="city-name" id="city">Определение</h1>
+    </div>
+  
+    <section class="music-todo">
+        <div class="music-todo__content">
+           <div class="audioContainer"></div>
+          <div class="todo">
+            <a href="./todo.html"><img class="todo__img" src="./src/img/icons/notebook.png" alt=""></a>
+          </div>
+        </div>
+    </section>
+    </main>
+    
+
+    <script type="module" src="./scripts/main.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="./src/style.css">
     <link rel="stylesheet" href="./src/styles/audioPlayer.css">
